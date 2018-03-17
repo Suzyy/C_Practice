@@ -60,10 +60,10 @@ int main()
     right = (voronoi[j+1] - voronoi[j])/2;
     neighUnits[i] = (left + right);
     //printf(" (%.1lf, %.1lf)", left, right);
-    //printf("%lf", neighUnits[i]);
+    //printf("%.1lf", neighUnits[i]);
   }
 
-  for(int i = 0; i < nVilge-2; i++)
+  for(int i = 0; i < nVilge-3; i++)
   {
     for(int j = i+1; j < nVilge-2; j++)
     {
@@ -83,31 +83,8 @@ int main()
   }
   */
 
-  printf("\n");
+  //printf("\n");
   printf("%.1lf\n", neighUnits[0]);
 
   return 0 ;
 }
-    
-      
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
