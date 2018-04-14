@@ -38,11 +38,12 @@ int main(){
   char c = 0;
   int nth = 0;
   int size = 0;
+  int total = 0;
 
   //ask user for sales amount
   for(int i = 0; i < 5; i++){
     while(!isgood){
-      printf("Enter sales amount for store #%d: ",i);
+      printf("Enter sales amount for store #%d: ",i+1);
       c = getchar();
       while( c != '\n'){
         stg[nth++] = c;
@@ -55,12 +56,25 @@ int main(){
       }
       else{
         merge(stg, nth, sales, i);
-        printf("debug: %d, i = %d\n", sales[i], i);
+        //printf("debug: %d, i = %d\n", sales[i], i);
       }
       nth = 0;
     }
     isgood = 0;
     //printf("debug(i) : %d\n", i);
   }
+        
+  printf("\n");
+  printf("MONTHLY SALES REPORT (BY STORE NUMBER) : \n");
+  printf("\n");
+
+  for(int i = 0 ; i < 5; i++){
+    printf("Store #%d   $  %d\n", i+1, sales[i]);
+    total = total + sales[i];
+  }
+  
+  printf("            ---------\n");
+  printf("TOTAL      $  %d\n", total);
+ 
   return 0;
 }
